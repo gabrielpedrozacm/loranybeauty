@@ -17,7 +17,7 @@
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="fr_CH">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BeautySalon", "name": "L'Or Any Beauty", "url": "https://loranybeauty.ch/", "image": "https://loranybeauty.ch/assets/og.jpg", "telephone": "+41 76 473 58 42", "address": {"@type": "PostalAddress", "streetAddress": "Rue de Lyon 6", "postalCode": "1201", "addressLocality": "Genève", "addressCountry": "CH"}, "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "10:00", "closes": "19:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "17:00"}], "sameAs": ["https://www.instagram.com/lor_any.beauty", "https://salonkee.ch/salon/lor-any-beauty"], "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "17"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BeautySalon", "name": "L'Or Any Beauty", "url": "https://loranybeauty.ch/", "image": "https://loranybeauty.ch/assets/og.jpg", "telephone": "+41 76 473 58 42", "address": {"@type": "PostalAddress", "streetAddress": "Rue de Lyon 6", "postalCode": "1201", "addressLocality": "Genève", "addressCountry": "CH"}, "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "10:00", "closes": "19:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "17:00"}], "sameAs": ["https://www.instagram.com/lor_any.beauty", "https://salonkee.ch/salon/lor-any-beauty", "https://www.google.com/maps/search/?api=1&query=L%27or%20Any%20Beauty%20Gen%C3%A8ve&query_place_id=ChIJTU1rX6tljEcR15Z2SAd9_cQ"], "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "17"}}</script>
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>L'Or Any Beauty</title>
 <meta name="description" content="Institut de beauté à Genève : Hydrafacial, soins du visage, madérothérapie, drainage lymphatique et épilation à la cire chaude. Rue de Lyon 6, à deux pas de la gare Cornavin.">
@@ -431,6 +431,17 @@ html:not([data-lang]) :is([lang="en"],[lang="pt"],[lang="de"]){display:none!impo
 .seg button[aria-pressed="true"]{color:var(--white)}
 .seg button:focus-visible{outline:2px solid var(--gold);outline-offset:2px;border-radius:999px}
 @media (prefers-reduced-motion:reduce){.f-img,.seg::before{transition:none}.f-after,.flip[data-state="after"] .f-before{transform:none}}
+
+/* Avis Google */
+.greview{margin-top:44px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:28px;align-items:center;padding:30px;border:1px solid var(--gold-soft);border-radius:12px;background:linear-gradient(135deg,#FFFDF8,#F6EEDC)}
+.gr-copy{display:grid;gap:12px;min-width:0}
+.gr-g{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--white);border:1px solid var(--line);font-family:var(--body);font-weight:500;font-size:1.1rem;color:var(--gold-deep)}
+.gr-copy p{color:var(--muted);max-width:52ch}
+.gr-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px}
+.gr-qr{margin:0;display:grid;gap:8px;justify-items:center}
+.qr-svg{width:148px;height:148px;display:block;background:#fff;border-radius:8px;padding:6px;border:1px solid var(--line)}
+.gr-qr figcaption{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);text-align:center}
+@media (max-width:700px){.greview{grid-template-columns:1fr;padding:24px}.gr-qr{display:none}}
 </style>
 </head>
 <body>
@@ -1002,6 +1013,21 @@ html:not([data-lang]) :is([lang="en"],[lang="pt"],[lang="de"]){display:none!impo
       <p class="care-note" lang="en">Reviews translated from French.</p>
       <p class="care-note" lang="pt">Avaliações traduzidas do francês.</p>
       <p class="care-note" lang="de">Bewertungen aus dem Französischen übersetzt.</p>
+      <div class="greview">
+        <div class="gr-copy">
+          <span class="gr-g" aria-hidden="true">G</span>
+          <h3 lang="fr">Vous avez aimé votre soin ?</h3><h3 lang="en">Enjoyed your treatment?</h3><h3 lang="pt">Gostou do seu tratamento?</h3><h3 lang="de">Hat Ihnen die Behandlung gefallen?</h3>
+          <p lang="fr">Laissez un avis sur Google : cela prend une minute et aide d'autres femmes à trouver l'institut.</p><p lang="en">Leave a review on Google: it takes a minute and helps others find the studio.</p><p lang="pt">Deixe uma avaliação no Google: demora um minuto e ajuda outras pessoas a encontrar o instituto.</p><p lang="de">Hinterlassen Sie eine Bewertung auf Google: Das dauert eine Minute und hilft anderen, das Studio zu finden.</p>
+          <div class="gr-actions">
+            <a class="btn btn-gold" href="https://search.google.com/local/writereview?placeid=ChIJTU1rX6tljEcR15Z2SAd9_cQ" target="_blank" rel="noopener"><span lang="fr">Laisser un avis Google</span><span lang="en">Leave a Google review</span><span lang="pt">Deixar avaliação no Google</span><span lang="de">Google-Bewertung schreiben</span></a>
+            <a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&query=L%27or%20Any%20Beauty%20Gen%C3%A8ve&query_place_id=ChIJTU1rX6tljEcR15Z2SAd9_cQ" target="_blank" rel="noopener"><span lang="fr">Voir sur Google Maps</span><span lang="en">View on Google Maps</span><span lang="pt">Ver no Google Maps</span><span lang="de">Auf Google Maps ansehen</span></a>
+          </div>
+        </div>
+        <figure class="gr-qr">
+          <svg class="qr-svg" viewBox="0 0 164 164" role="img" aria-label="QR code" xmlns="http://www.w3.org/2000/svg" class="segno"><g transform="scale(4)"><path fill="#fff" d="M0 0h41v41h-41z"/><path class="qrline" stroke="#5e4519" d="M2 2.5h7m1 0h1m1 0h3m1 0h2m3 0h1m1 0h2m2 0h1m1 0h1m2 0h7m-37 1h1m5 0h1m3 0h3m2 0h5m2 0h1m5 0h1m1 0h1m5 0h1m-37 1h1m1 0h3m1 0h1m5 0h6m3 0h1m4 0h2m2 0h1m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m1 0h2m2 0h2m1 0h1m2 0h3m1 0h2m1 0h4m1 0h1m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m1 0h4m2 0h2m1 0h2m4 0h1m1 0h4m1 0h1m1 0h3m1 0h1m-37 1h1m5 0h1m1 0h4m5 0h1m1 0h1m1 0h1m3 0h2m3 0h1m5 0h1m-37 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-29 1h3m3 0h9m1 0h1m1 0h1m-27 1h1m3 0h1m1 0h4m2 0h1m1 0h1m1 0h2m1 0h1m1 0h1m1 0h2m2 0h7m2 0h1m-37 1h4m5 0h1m1 0h1m2 0h1m2 0h2m1 0h4m4 0h2m1 0h2m2 0h1m-35 1h1m1 0h4m3 0h1m2 0h1m1 0h1m1 0h1m5 0h7m3 0h2m-35 1h1m1 0h3m2 0h3m5 0h4m1 0h2m1 0h2m1 0h2m2 0h2m2 0h2m-31 1h3m1 0h3m1 0h2m2 0h1m1 0h1m1 0h2m1 0h1m4 0h2m3 0h3m-36 1h3m1 0h1m1 0h3m4 0h3m6 0h1m1 0h3m4 0h2m1 0h1m-36 1h1m1 0h3m1 0h3m1 0h1m1 0h2m1 0h1m4 0h6m1 0h2m1 0h5m-35 1h1m1 0h1m1 0h1m3 0h3m1 0h2m1 0h7m5 0h2m2 0h2m1 0h1m1 0h1m-37 1h4m2 0h2m2 0h4m1 0h1m4 0h2m2 0h2m1 0h5m1 0h3m-36 1h1m2 0h1m1 0h1m4 0h3m1 0h1m1 0h1m4 0h2m5 0h1m1 0h1m1 0h4m-32 1h1m1 0h1m2 0h1m1 0h2m3 0h3m1 0h2m1 0h1m1 0h4m2 0h1m1 0h2m-35 1h1m1 0h2m3 0h1m1 0h2m1 0h1m1 0h1m2 0h1m3 0h2m3 0h1m1 0h1m3 0h1m1 0h2m-36 1h1m1 0h2m2 0h1m2 0h4m2 0h1m1 0h1m1 0h6m2 0h1m1 0h3m2 0h1m-34 1h1m2 0h1m2 0h1m2 0h1m2 0h1m1 0h2m1 0h1m1 0h1m2 0h1m2 0h3m2 0h2m2 0h1m-35 1h3m1 0h4m1 0h8m3 0h1m1 0h1m3 0h1m1 0h1m1 0h5m-36 1h1m1 0h1m7 0h5m2 0h2m1 0h2m2 0h1m3 0h1m1 0h3m1 0h1m1 0h1m-36 1h1m1 0h2m1 0h1m1 0h1m3 0h3m1 0h1m1 0h1m1 0h1m1 0h3m1 0h1m2 0h3m1 0h4m-37 1h1m1 0h1m1 0h2m2 0h1m1 0h1m2 0h2m3 0h2m1 0h3m1 0h1m2 0h1m3 0h1m-31 1h1m1 0h1m1 0h2m2 0h1m4 0h1m1 0h2m1 0h1m2 0h1m1 0h3m1 0h1m1 0h1m2 0h1m-32 1h1m1 0h1m3 0h1m2 0h1m1 0h6m1 0h1m1 0h2m1 0h3m2 0h1m2 0h1m1 0h1m-37 1h2m2 0h1m1 0h2m4 0h3m1 0h2m1 0h6m2 0h6m1 0h2m-28 1h1m1 0h4m1 0h2m4 0h1m1 0h4m1 0h1m3 0h1m2 0h1m-36 1h7m1 0h1m1 0h2m2 0h2m1 0h1m2 0h1m1 0h5m1 0h1m1 0h1m1 0h1m-33 1h1m5 0h1m2 0h2m3 0h2m1 0h1m3 0h4m3 0h1m3 0h3m-35 1h1m1 0h3m1 0h1m1 0h7m3 0h2m1 0h1m2 0h1m3 0h9m-37 1h1m1 0h3m1 0h1m4 0h2m1 0h1m1 0h1m1 0h2m2 0h2m4 0h4m4 0h1m-37 1h1m1 0h3m1 0h1m2 0h1m1 0h4m1 0h1m5 0h2m2 0h3m1 0h1m-31 1h1m5 0h1m3 0h2m1 0h2m2 0h1m1 0h1m1 0h1m1 0h2m2 0h4m1 0h1m1 0h2m-36 1h7m1 0h3m4 0h1m1 0h1m1 0h4m1 0h1m2 0h1m2 0h2m2 0h3"/></g></svg>
+          <figcaption><span lang="fr">Scannez avec votre téléphone</span><span lang="en">Scan with your phone</span><span lang="pt">Digitalize com o telemóvel</span><span lang="de">Mit dem Handy scannen</span></figcaption>
+        </figure>
+      </div>
     </div>
   </section>
 
@@ -1157,7 +1183,7 @@ html:not([data-lang]) :is([lang="en"],[lang="pt"],[lang="de"]){display:none!impo
           <ul lang="en"><li>Next to Cornavin station</li><li>Parking all around the studio</li></ul>
           <ul lang="pt"><li>Junto à estação de Cornavin</li><li>Estacionamento à volta do instituto</li></ul>
           <ul lang="de"><li>Neben dem Bahnhof Cornavin</li><li>Parkplätze rund um das Studio</li></ul>
-          <a class="link" href="https://www.google.com/maps/search/?api=1&query=Rue+de+Lyon+6+1201+Gen%C3%A8ve" target="_blank" rel="noopener"><span lang="fr">Voir sur la carte</span><span lang="en">View on map</span><span lang="pt">Ver no mapa</span><span lang="de">Auf der Karte ansehen</span></a>
+          <a class="link" href="https://www.google.com/maps/search/?api=1&query=L%27or%20Any%20Beauty%20Gen%C3%A8ve&query_place_id=ChIJTU1rX6tljEcR15Z2SAd9_cQ" target="_blank" rel="noopener"><span lang="fr">Voir sur la carte</span><span lang="en">View on map</span><span lang="pt">Ver no mapa</span><span lang="de">Auf der Karte ansehen</span></a>
         </div>
         <div class="card">
           <span class="lbl"><span lang="fr">Horaires</span><span lang="en">Opening hours</span><span lang="pt">Horário</span><span lang="de">Öffnungszeiten</span></span>
