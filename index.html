@@ -416,6 +416,21 @@ html:not([data-lang]) :is([lang="en"],[lang="pt"],[lang="de"]){display:none!impo
 .dur{font-size:.85em;color:var(--muted)}
 .pack-h{margin-top:14px;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
 .row .p s{font-size:.95rem;color:var(--muted);margin-right:8px;text-decoration-color:var(--gold)}
+
+/* Avant / Après : bascule au toucher */
+.flip{position:relative;aspect-ratio:600/440;max-width:100%;overflow:hidden;border-radius:12px;border:1px solid var(--line);background:var(--linen);cursor:pointer;-webkit-tap-highlight-color:transparent;user-select:none;-webkit-user-select:none;box-shadow:0 18px 36px -24px rgba(74,56,28,.45)}
+.f-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;-webkit-user-drag:none;transition:opacity .7s ease,transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.f-after{opacity:0;transform:scale(1.04)}
+.flip[data-state="after"] .f-after{opacity:1;transform:none}
+.flip[data-state="after"] .f-before{transform:scale(1.02)}
+.flip::after{content:"";position:absolute;inset:auto 0 0;height:42%;background:linear-gradient(transparent,rgba(40,28,10,.38));pointer-events:none}
+.seg{position:absolute;z-index:2;left:50%;bottom:14px;transform:translateX(-50%);display:grid;grid-template-columns:1fr 1fr;padding:4px;border-radius:999px;background:rgba(255,255,255,.82);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 6px 18px -8px rgba(40,28,10,.5)}
+.seg::before{content:"";position:absolute;top:4px;bottom:4px;left:4px;width:calc(50% - 4px);border-radius:999px;background:linear-gradient(135deg,#C9A45C,#A9843F);transition:transform .45s cubic-bezier(.3,.8,.2,1)}
+.flip[data-state="after"] .seg::before{transform:translateX(100%)}
+.seg button{all:unset;position:relative;z-index:1;cursor:pointer;min-width:84px;text-align:center;padding:9px 16px;font-family:var(--body);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep);transition:color .3s}
+.seg button[aria-pressed="true"]{color:var(--white)}
+.seg button:focus-visible{outline:2px solid var(--gold);outline-offset:2px;border-radius:999px}
+@media (prefers-reduced-motion:reduce){.f-img,.seg::before{transition:none}.f-after,.flip[data-state="after"] .f-before{transform:none}}
 </style>
 </head>
 <body>
@@ -613,44 +628,68 @@ html:not([data-lang]) :is([lang="en"],[lang="pt"],[lang="de"]){display:none!impo
       </div>
       <div class="ba-scroll" tabindex="0" aria-label="Avant / Après · Before / After">
         <figure class="ba">
-          <div class="pair">
-            <div class="half"><img src="assets/ba1a.jpg" alt="" width="600" height="440" loading="lazy"><span class="tag"><span lang="fr">Avant</span><span lang="en">Before</span><span lang="pt">Antes</span><span lang="de">Vorher</span></span></div>
-            <div class="half"><img src="assets/ba1b.jpg" alt="" width="600" height="440" loading="lazy"><span class="tag after"><span lang="fr">Après</span><span lang="en">After</span><span lang="pt">Depois</span><span lang="de">Nachher</span></span></div>
+          <div class="flip" data-state="before">
+            <img class="f-img f-before" src="assets/ba1a.jpg" alt="" width="600" height="440" loading="lazy" draggable="false">
+            <img class="f-img f-after" src="assets/ba1b.jpg" alt="" width="600" height="440" loading="lazy" draggable="false">
+            <div class="seg" role="group" aria-label="Avant / Après">
+              <button type="button" data-v="before" aria-pressed="true"><span lang="fr">Avant</span><span lang="en">Before</span><span lang="pt">Antes</span><span lang="de">Vorher</span></button>
+              <button type="button" data-v="after" aria-pressed="false"><span lang="fr">Après</span><span lang="en">After</span><span lang="pt">Depois</span><span lang="de">Nachher</span></button>
+            </div>
           </div>
           <figcaption>Hydrafacial</figcaption>
         </figure>
         <figure class="ba">
-          <div class="pair">
-            <div class="half"><img src="assets/ba2a.jpg" alt="" width="600" height="440" loading="lazy"><span class="tag"><span lang="fr">Avant</span><span lang="en">Before</span><span lang="pt">Antes</span><span lang="de">Vorher</span></span></div>
-            <div class="half"><img src="assets/ba2b.jpg" alt="" width="600" height="440" loading="lazy"><span class="tag after"><span lang="fr">Après</span><span lang="en">After</span><span lang="pt">Depois</span><span lang="de">Nachher</span></span></div>
+          <div class="flip" data-state="before">
+            <img class="f-img f-before" src="assets/ba2a.jpg" alt="" width="600" height="440" loading="lazy" draggable="false">
+            <img class="f-img f-after" src="assets/ba2b.jpg" alt="" width="600" height="440" loading="lazy" draggable="false">
+            <div class="seg" role="group" aria-label="Avant / Après">
+              <button type="button" data-v="before" aria-pressed="true"><span lang="fr">Avant</span><span lang="en">Before</span><span lang="pt">Antes</span><span lang="de">Vorher</span></button>
+              <button type="button" data-v="after" aria-pressed="false"><span lang="fr">Après</span><span lang="en">After</span><span lang="pt">Depois</span><span lang="de">Nachher</span></button>
+            </div>
           </div>
           <figcaption>Hydrafacial</figcaption>
         </figure>
         <figure class="ba">
-          <div class="pair">
-            <div class="half"><img src="assets/ba3a.jpg" alt="" width="600" height="440" loading="lazy"><span class="tag"><span lang="fr">Avant</span><span lang="en">Before</span><span lang="pt">Antes</span><span lang="de">Vorher</span></span></div>
-            <div class="half"><img src="assets/ba3b.jpg" alt="" width="600" height="440" loading="lazy"><span class="tag after"><span lang="fr">Après</span><span lang="en">After</span><span lang="pt">Depois</span><span lang="de">Nachher</span></span></div>
+          <div class="flip" data-state="before">
+            <img class="f-img f-before" src="assets/ba3a.jpg" alt="" width="600" height="440" loading="lazy" draggable="false">
+            <img class="f-img f-after" src="assets/ba3b.jpg" alt="" width="600" height="440" loading="lazy" draggable="false">
+            <div class="seg" role="group" aria-label="Avant / Après">
+              <button type="button" data-v="before" aria-pressed="true"><span lang="fr">Avant</span><span lang="en">Before</span><span lang="pt">Antes</span><span lang="de">Vorher</span></button>
+              <button type="button" data-v="after" aria-pressed="false"><span lang="fr">Après</span><span lang="en">After</span><span lang="pt">Depois</span><span lang="de">Nachher</span></button>
+            </div>
           </div>
           <figcaption>Hydrafacial</figcaption>
         </figure>
         <figure class="ba">
-          <div class="pair">
-            <div class="half"><img src="assets/ba4a.jpg" alt="" width="600" height="440" loading="lazy"><span class="tag"><span lang="fr">Avant</span><span lang="en">Before</span><span lang="pt">Antes</span><span lang="de">Vorher</span></span></div>
-            <div class="half"><img src="assets/ba4b.jpg" alt="" width="600" height="440" loading="lazy"><span class="tag after"><span lang="fr">Après</span><span lang="en">After</span><span lang="pt">Depois</span><span lang="de">Nachher</span></span></div>
+          <div class="flip" data-state="before">
+            <img class="f-img f-before" src="assets/ba4a.jpg" alt="" width="600" height="440" loading="lazy" draggable="false">
+            <img class="f-img f-after" src="assets/ba4b.jpg" alt="" width="600" height="440" loading="lazy" draggable="false">
+            <div class="seg" role="group" aria-label="Avant / Après">
+              <button type="button" data-v="before" aria-pressed="true"><span lang="fr">Avant</span><span lang="en">Before</span><span lang="pt">Antes</span><span lang="de">Vorher</span></button>
+              <button type="button" data-v="after" aria-pressed="false"><span lang="fr">Après</span><span lang="en">After</span><span lang="pt">Depois</span><span lang="de">Nachher</span></button>
+            </div>
           </div>
           <figcaption>Hydrafacial</figcaption>
         </figure>
         <figure class="ba">
-          <div class="pair">
-            <div class="half"><img src="assets/ba5a.jpg" alt="" width="600" height="440" loading="lazy"><span class="tag"><span lang="fr">Avant</span><span lang="en">Before</span><span lang="pt">Antes</span><span lang="de">Vorher</span></span></div>
-            <div class="half"><img src="assets/ba5b.jpg" alt="" width="600" height="440" loading="lazy"><span class="tag after"><span lang="fr">Après</span><span lang="en">After</span><span lang="pt">Depois</span><span lang="de">Nachher</span></span></div>
+          <div class="flip" data-state="before">
+            <img class="f-img f-before" src="assets/ba5a.jpg" alt="" width="600" height="440" loading="lazy" draggable="false">
+            <img class="f-img f-after" src="assets/ba5b.jpg" alt="" width="600" height="440" loading="lazy" draggable="false">
+            <div class="seg" role="group" aria-label="Avant / Après">
+              <button type="button" data-v="before" aria-pressed="true"><span lang="fr">Avant</span><span lang="en">Before</span><span lang="pt">Antes</span><span lang="de">Vorher</span></button>
+              <button type="button" data-v="after" aria-pressed="false"><span lang="fr">Après</span><span lang="en">After</span><span lang="pt">Depois</span><span lang="de">Nachher</span></button>
+            </div>
           </div>
           <figcaption>Hydrafacial · <span lang="fr">1<sup>re</sup> séance</span><span lang="en">1st session</span><span lang="pt">1.ª sessão</span><span lang="de">1. Sitzung</span></figcaption>
         </figure>
         <figure class="ba">
-          <div class="pair">
-            <div class="half"><img src="assets/ba6a.jpg" alt="" width="600" height="440" loading="lazy"><span class="tag"><span lang="fr">Avant</span><span lang="en">Before</span><span lang="pt">Antes</span><span lang="de">Vorher</span></span></div>
-            <div class="half"><img src="assets/ba6b.jpg" alt="" width="600" height="440" loading="lazy"><span class="tag after"><span lang="fr">Après</span><span lang="en">After</span><span lang="pt">Depois</span><span lang="de">Nachher</span></span></div>
+          <div class="flip" data-state="before">
+            <img class="f-img f-before" src="assets/ba6a.jpg" alt="" width="600" height="440" loading="lazy" draggable="false">
+            <img class="f-img f-after" src="assets/ba6b.jpg" alt="" width="600" height="440" loading="lazy" draggable="false">
+            <div class="seg" role="group" aria-label="Avant / Après">
+              <button type="button" data-v="before" aria-pressed="true"><span lang="fr">Avant</span><span lang="en">Before</span><span lang="pt">Antes</span><span lang="de">Vorher</span></button>
+              <button type="button" data-v="after" aria-pressed="false"><span lang="fr">Après</span><span lang="en">After</span><span lang="pt">Depois</span><span lang="de">Nachher</span></button>
+            </div>
           </div>
           <figcaption>Hydrafacial</figcaption>
         </figure>
@@ -1273,6 +1312,18 @@ html:not([data-lang]) :is([lang="en"],[lang="pt"],[lang="de"]){display:none!impo
     new IntersectionObserver(function(es){es.forEach(function(e){ctaIn=e.isIntersecting}); upd();},{threshold:0}).observe(cta);
   } else { fb.classList.add('show'); }
 
+
+  /* ---------- Avant / Après : bascule ---------- */
+  document.querySelectorAll('.flip').forEach(function(f){
+    function set(v){f.setAttribute('data-state',v);f.querySelectorAll('.seg button').forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-v')===v?'true':'false')})}
+    f.querySelectorAll('.seg button').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();f._touched=true;set(b.getAttribute('data-v'))})});
+    f.addEventListener('click',function(){f._touched=true;set(f.getAttribute('data-state')==='before'?'after':'before')});
+    f._set=set;
+  });
+  if(!reduce&&'IntersectionObserver' in window){
+    var fio=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var f=e.target;fio.unobserve(f);setTimeout(function(){if(!f._touched)f._set('after')},900)}})},{threshold:.65});
+    document.querySelectorAll('.flip').forEach(function(f){fio.observe(f)});
+  }
   // flèches du carrousel (mobile)
   var sc=document.querySelector('.ba-scroll'), count=document.getElementById('baCount');
   var cards=[].slice.call(sc.querySelectorAll('.ba'));
